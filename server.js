@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const path = require("path");
 const config = require("./config/keys");
 const items = require("./routes/api/items");
+const user = require("./routes/users");
+
 
 const app = express();
 
@@ -20,6 +22,7 @@ mongoose
   );
 
 app.use('/api/items', items);
+app.use('/user', user);
 
 
 

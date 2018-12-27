@@ -17,6 +17,11 @@ router.get('/', (req, res) => {
 // @desc    Create An Item
 // @access  Public
 router.post('/', (req, res) => {
+    const { name } = req.body;
+    if (name === '' || null || -1) {
+        res.send(`Invalid Value : Name is Required '${name}' is given`);
+        return false;
+    }
     const newItem = new Item({
         name: req.body.name
     });
