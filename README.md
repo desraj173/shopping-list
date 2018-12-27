@@ -7,10 +7,10 @@ MERN Stack App
 **Simple Shopping List Items**
 with REST API
 
-GET ALL ITEMS
-ADD  AN ITEM
-DELETE  AN ITEM
-UPDATE  ITEM
+## GET ALL ITEMS
+## ADD  AN ITEM
+## DELETE  AN ITEM
+## UPDATE  ITEM
 
 #### Dependies {
     NODE 
