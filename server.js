@@ -17,8 +17,8 @@ const db = config.mongoURI;
 
 mongoose
   .connect(db, { useNewUrlParser: true })
-  .then(() => console.log(`database connected`))
-  .catch(err => console.log(`database error`, err)
+  .then(() => console.log(`Mongodb {mLab} connected`))
+  .catch(err => console.log(`db error`, err)
   );
 
 app.use('/api/items', items);
