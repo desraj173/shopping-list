@@ -6,7 +6,7 @@ const helper = require('./helper/index');
 const User = require('../models/User');
 
 router.get('/', (req, res) => {
-    res.send("The User Page");;
+    res.send("The Users Page");;
 });
 
 
@@ -51,6 +51,8 @@ router.post('/login', (req, res) => {
 
 
 });
+
+
 
 
 module.exports = router;

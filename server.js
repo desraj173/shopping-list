@@ -17,17 +17,24 @@ const db = config.mongoURI;
 
 mongoose
   .connect(db, { useNewUrlParser: true })
-  .then(() => console.log(`Mongodb {mLab} connected`))
+  .then(() => console.log(`Mongodb {} connected`))
   .catch(err => console.log(`db error`, err)
   );
 
+
+
 app.use('/api/items', items);
-app.use('/user', user);
+app.use('/users', user);
 
 
 
 app.get("/", (req, res) => {
   res.send("Welcome TO Landing Page");
+});
+
+
+app.use((req, res, next) => {
+  res.status(404).json({ messsage: " The Page You Are Requested Is Not Found" });
 });
 
 

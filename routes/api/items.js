@@ -18,12 +18,12 @@ router.get('/', (req, res) => {
 // @access  Public
 router.post('/', (req, res) => {
     const { name } = req.body;
-    if (name === '' || null || -1) {
+    if (name === '' || null) {
         res.send(`Invalid Value : Name is Required '${name}' is given`);
         return false;
     }
     const newItem = new Item({
-        name: req.body.name
+        name: name
     });
 
     newItem.save().then(item => res.json(item));

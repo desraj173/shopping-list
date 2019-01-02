@@ -29,6 +29,11 @@ with REST API
     
 }
 
+### Auth {
+    JWT
+    PASSPORT
+}
+
 RUN COMMAND `npm install && npm install --prefix client`
 
 ## ROOT is Server

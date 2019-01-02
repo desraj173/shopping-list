@@ -1,5 +1,5 @@
 module.exports = {
-    mongoURI: 'mongodb://desraj:desraj123@ds029476.mlab.com:29476/mern_shopping',
+    mongoURI: 'mongodb://127.0.0.1:27017/shopping_list',
     ENV: process.env.NODE_ENV,
     PORT: process.env.PORT || 5000,
 }
