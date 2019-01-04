@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
+const morgan = require("morgan");
+
 const config = require("./config/keys");
 const items = require("./routes/api/items");
 const user = require("./routes/users");
@@ -23,6 +25,7 @@ mongoose
 
 
 
+app.use(morgan('dev'));
 app.use('/api/items', items);
 app.use('/users', user);
 
