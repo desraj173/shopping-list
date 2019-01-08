@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const helper = require('./helper/index');
 
 // User Model
 const User = require('../models/User');
 
 router.get('/', (req, res) => {
-    res.send("The User Page");;
+    res.send("The Users Page");;
 });
 
 
@@ -34,31 +35,24 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
 
+
     User.find({ username, password }).then((result) => {
-        if (result) {
-            console.log("result");
-            return;
+        if (helper.isEmpty(result)) {
+            console.log("err result", result);
+
+            return res.status(403).json({ message: "Forbidden" });
         }
         else {
-            console.log("no result");
-            return;
+            console.log("result", result);
+
+            return res.status(200).json({ message: "login success" });
         }
     });
 
-    // if (!user) {
-    //     console.log(err);
-    // } else {
-    //     console.log("user finded");
-    // }
-    //     .then((docs) => {
-    //     console.log(docs);
-    //     res.send("login successfull");
-
-    // }).catch((err) => {
-    //     console.log("err", err)
-    // })
 
 });
+
+
 
 
 module.exports = router;

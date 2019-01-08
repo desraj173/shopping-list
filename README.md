@@ -29,9 +29,17 @@ with REST API
     
 }
 
+### Auth {
+    JWT
+    PASSPORT
+}
+
 RUN COMMAND `npm install && npm install --prefix client`
 
 ## ROOT is Server
 ### /client is client folder responsible for UI {REACT APP} ;
 
+##github
 
+
+  
