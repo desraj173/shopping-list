@@ -10,19 +10,22 @@ export class ShoppingList extends Component {
     componentDidMount() {
         axios.get(`api/items/`)
             .then(res => {
-                const items = res.data;
+                let items = res.data;
                 this.setState({ items });
             })
             .catch(err => { console.log(err) })
     }
 
     render() {
+        const { items } = this.state;
         return (
+
             <div>
+
                 <ul>
-                    {this.state.items.map(item => <li> {item.name}</li>)}
+                    {items.map(item => <li key={item._id}> {item.name}</li>)}
                 </ul>
-            </div>
+            </div >
         )
     }
 }
