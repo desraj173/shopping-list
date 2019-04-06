@@ -1,33 +1,36 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
+import ShoppingItem from "./ShoppingItem";
 
 export class ShoppingList extends Component {
+  state = {
+    items: []
+  };
 
-    state = {
-        items: []
-    }
+  componentDidMount() {
+    axios
+      .get(`api/items/`)
+      .then(res => {
+        let items = res.data;
+        this.setState({ items });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
-    componentDidMount() {
-        axios.get(`api/items/`)
-            .then(res => {
-                let items = res.data;
-                this.setState({ items });
-            })
-            .catch(err => { console.log(err) })
-    }
-
-    render() {
-        const { items } = this.state;
-        return (
-
-            <div>
-
-                <ul>
-                    {items.map(item => <li key={item._id}> {item.name}</li>)}
-                </ul>
-            </div >
-        )
-    }
+  render() {
+    const { items } = this.state;
+    return (
+      <div>
+        <ul>
+          {items.map(item => (
+            <ShoppingItem item={item} key={item._id} />
+          ))}
+        </ul>
+      </div>
+    );
+  }
 }
 
-export default ShoppingList
+export default ShoppingList;
