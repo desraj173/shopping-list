@@ -17,7 +17,7 @@
     "concurrently": "^4.0.1",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.3.11"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {
     "morgan": "^1.9.1",
